@@ -1,9 +1,6 @@
 package com.spring.app.springapp;
 
-import com.spring.ioc.model.Company;
-import com.spring.ioc.model.Developer;
-import com.spring.ioc.model.House;
-import com.spring.ioc.model.Service;
+import com.spring.ioc.model.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -64,6 +61,15 @@ public class SpringAppApplication {
         service2 = (Service) ctxt.getBean("service2");
         System.out.println(service2);
 
+        System.out.println();
+        System.out.println("Calling Customer :");
+        Customer cust = (Customer) ctxt.getBean("customerBean");
+        System.out.println(cust);
+
+        System.out.println();
+        System.out.println("KungFu Panda :");
+        Panda pow = (Panda) ctxt.getBean("pow");
+        System.out.println(pow);
     }
 
 }

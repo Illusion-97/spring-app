@@ -42,4 +42,21 @@
         <constructor-arg value="♥ I'm a Service ♥" type="java.lang.String"/>
     </bean>
 
+    <bean id="firstAddress" class="com.spring.ioc.model.Address">
+        <property name="fullAddress"
+                  value="Gare Lille Flandres 59000, Batiment A, Etage 4"/>
+    </bean>
+
+    <bean id="customerBean" class="com.spring.ioc.model.Customer">
+        <property name="name" value="Agence de Formation"/>
+        <property name="firstAddress" ref="firstAddress"/>
+    </bean>
+
+    <bean id="kungFu" class="com.spring.ioc.model.KungFu">
+        <constructor-arg value="Dragon Blow" type="java.lang.String"/>
+    </bean>
+
+    <bean id="pow" class="com.spring.ioc.model.Panda" autowire="constructor">
+        <constructor-arg value="Pow" type="java.lang.String"/>
+    </bean>
 </beans>
