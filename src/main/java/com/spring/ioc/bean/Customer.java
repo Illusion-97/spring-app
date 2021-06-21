@@ -1,13 +1,14 @@
 package com.spring.ioc.bean;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Configurable;
-import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
-@Service
-@Configurable
+@Component("custom")
 public class Customer {
+    @Value("Dance")
     private String action;
+    @Value("2")
     private int type;
     @Autowired
     private Person person;

@@ -1,11 +1,22 @@
 package com.spring.ioc.model;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component("houseBean1")
 public class House {
 
+    @Value("Euratechnologies, Lille 59000")
     private String address;
+    @Value("30")
     private int nbWindow;
+    @Value("14")
     private int nbDoor;
+    @Value("Myrthille")
     private String owner;
+
+    public House() {
+    }
 
     public House(String address, int nbWindow, int nbDoor, String owner) {
         this.address = address;

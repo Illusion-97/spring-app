@@ -1,8 +1,15 @@
 package com.spring.ioc.bean;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component("person")
 public class Person {
+    @Value("Me")
     private String firstName;
+    @Value("Mi")
     private String lastName;
+    @Value("Memi@Mi.me")
     private String email;
 
     public Person() {

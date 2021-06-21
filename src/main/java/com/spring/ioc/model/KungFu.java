@@ -1,6 +1,11 @@
 package com.spring.ioc.model;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component("kungFu")
 public class KungFu {
+    @Value(("Dragon Blow"))
     private String name;
 
     public KungFu(String name) {

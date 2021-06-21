@@ -19,30 +19,8 @@ public class SpringAppApplication {
         System.out.println(ctxt.getBean("houseBean1"));
 
         System.out.println();
-        System.out.println("House Disordered :");
-        System.out.println(ctxt.getBean("houseBean2"));
-
-        System.out.println();
-        System.out.println("Calling Mickeal :");
-        System.out.println(ctxt.getBean("developerBean"));
-
-        System.out.println();
-        System.out.println("Calling Adam :");
-        System.out.println(ctxt.getBean("productManagerBean"));
-
-        System.out.println();
         System.out.println("Boris Company :");
         System.out.println(ctxt.getBean("companyBean"));
-
-        System.out.println();
-        System.out.println("Calling Singleton Service :");
-        Service service = (Service) ctxt.getBean("service1");
-        System.out.println(service);
-        service.setMessage(service.getMessage().replace('♣','♠'));
-        System.out.println("Calling Renamed Service :");
-        System.out.println(service);
-        System.out.println("Calling Contexted Signleton Service :");
-        System.out.println(ctxt.getBean("service1"));
 
         System.out.println();
         System.out.println("Calling Prototype Service :");

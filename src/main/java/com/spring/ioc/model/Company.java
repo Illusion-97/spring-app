@@ -1,8 +1,16 @@
 package com.spring.ioc.model;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component("companyBean")
 public class Company {
+    @Value("Boris company")
     private  String name;
+    @Autowired
     private Developer projectManager;
+    @Autowired
     private Developer devJava;
 
     public Company() {

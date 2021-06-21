@@ -1,6 +1,12 @@
 package com.spring.ioc.model;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component("pow")
 public class Panda {
+    @Autowired
     private KungFu kungFu;
 
     public Panda(KungFu kungFu) {

@@ -8,72 +8,16 @@
            http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
     <context:annotation-config/>
+    <context:component-scan base-package="com.spring.ioc"/>
 
-    <bean id="person" class="com.spring.ioc.bean.Person">
-        <constructor-arg value="Me" type="java.lang.String"/>
-        <constructor-arg value="Mi" type="java.lang.String"/>
-        <constructor-arg value="Mime@Me.mi" type="java.lang.String"/>
-    </bean>
-
-    <bean id="custom" class="com.spring.ioc.bean.Customer">
-        <property name="action" value="Dancer"/>
-        <property name="type" value="2"/>
-    </bean>
-
-    <bean id="houseBean1" class="com.spring.ioc.model.House">
-        <constructor-arg value="Euratechnologies, Lille 59000" type="java.lang.String"/>
-        <constructor-arg value="30" type="int"/>
-        <constructor-arg value="14" type="int"/>
-        <constructor-arg value="Myrthille" type="java.lang.String"/>
-    </bean>
-
-    <bean id="houseBean2" class="com.spring.ioc.model.House">
-        <constructor-arg value="Myrthille" type="java.lang.String" index="3"/>
-        <constructor-arg value="30" index="1" type="int"/>
-        <constructor-arg value="Euratechnologies, Lille 59000" type="java.lang.String" index="0"/>
-        <constructor-arg value="14" type="int" index="2">
-        </constructor-arg>
-    </bean>
-
-    <bean id="developerBean" class="com.spring.ioc.model.Developer">
+    <bean id="devJava" class="com.spring.ioc.model.Developer">
         <property name="name" value="Mickael"/>
         <property name="nbSkillYear" value="4"/>
     </bean>
 
-    <bean id="productManagerBean" class="com.spring.ioc.model.Developer">
+    <bean id="projectManager" class="com.spring.ioc.model.Developer">
         <property name="name" value="Adam"/>
         <property name="nbSkillYear" value="45"/>
     </bean>
 
-    <bean id="companyBean" class="com.spring.ioc.model.Company">
-        <property name="name" value="Boris company"/>
-        <property name="devJava" ref="developerBean"/>
-        <property name="projectManager" ref="productManagerBean"/>
-    </bean>
-
-    <bean id="service1" class="com.spring.ioc.model.Service">
-        <constructor-arg value="♣ I'm a Service ♣" type="java.lang.String"/>
-    </bean>
-
-    <bean id="service2" class="com.spring.ioc.model.Service" scope="prototype">
-        <constructor-arg value="♥ I'm a Service ♥" type="java.lang.String"/>
-    </bean>
-
-    <bean id="firstAddress" class="com.spring.ioc.model.Address">
-        <property name="fullAddress"
-                  value="Gare Lille Flandres 59000, Batiment A, Etage 4"/>
-    </bean>
-
-    <bean id="customerBean" class="com.spring.ioc.model.Customer">
-        <property name="name" value="Agence de Formation"/>
-        <property name="firstAddress" ref="firstAddress"/>
-    </bean>
-
-    <bean id="kungFu" class="com.spring.ioc.model.KungFu">
-        <constructor-arg value="Dragon Blow" type="java.lang.String"/>
-    </bean>
-
-    <bean id="pow" class="com.spring.ioc.model.Panda" autowire="constructor">
-        <constructor-arg value="Pow" type="java.lang.String"/>
-    </bean>
 </beans>
