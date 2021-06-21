@@ -19,18 +19,27 @@
     </bean>
 
     <bean id="developerBean" class="com.spring.ioc.model.Developer">
-        <property name="name" value="Mickael"></property>
-        <property name="nbSkillYear" value="4"></property>
+        <property name="name" value="Mickael"/>
+        <property name="nbSkillYear" value="4"/>
     </bean>
 
     <bean id="productManagerBean" class="com.spring.ioc.model.Developer">
-        <property name="name" value="Adam"></property>
-        <property name="nbSkillYear" value="45"></property>
+        <property name="name" value="Adam"/>
+        <property name="nbSkillYear" value="45"/>
     </bean>
 
     <bean id="companyBean" class="com.spring.ioc.model.Company">
-        <property name="name" value="Boris company"></property>
-        <property name="devJava" ref="developerBean"></property>
-        <property name="projectManager" ref="productManagerBean"></property>
+        <property name="name" value="Boris company"/>
+        <property name="devJava" ref="developerBean"/>
+        <property name="projectManager" ref="productManagerBean"/>
     </bean>
+
+    <bean id="service1" class="com.spring.ioc.model.Service">
+        <constructor-arg value="♣ I'm a Service ♣" type="java.lang.String"/>
+    </bean>
+
+    <bean id="service2" class="com.spring.ioc.model.Service" scope="prototype">
+        <constructor-arg value="♥ I'm a Service ♥" type="java.lang.String"/>
+    </bean>
+
 </beans>
