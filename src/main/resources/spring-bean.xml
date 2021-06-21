@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+    <context:annotation-config/>
+
+    <bean id="person" class="com.spring.ioc.bean.Person">
+        <constructor-arg value="Me" type="java.lang.String"/>
+        <constructor-arg value="Mi" type="java.lang.String"/>
+        <constructor-arg value="Mime@Me.mi" type="java.lang.String"/>
+    </bean>
+
+    <bean id="custom" class="com.spring.ioc.bean.Customer">
+        <property name="action" value="Dancer"/>
+        <property name="type" value="2"/>
+    </bean>
 
     <bean id="houseBean1" class="com.spring.ioc.model.House">
         <constructor-arg value="Euratechnologies, Lille 59000" type="java.lang.String"/>
