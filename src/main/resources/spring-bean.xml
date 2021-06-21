@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="houseBean1" class="com.spring.ioc.model.House">
+        <constructor-arg value="Euratechnologies, Lille 59000" type="java.lang.String"/>
+        <constructor-arg value="30" type="int"/>
+        <constructor-arg value="14" type="int"/>
+        <constructor-arg value="Myrthille" type="java.lang.String"/>
+    </bean>
+
+    <bean id="houseBean2" class="com.spring.ioc.model.House">
+        <constructor-arg value="Myrthille" type="java.lang.String" index="3"/>
+        <constructor-arg value="30" index="1" type="int"/>
+        <constructor-arg value="Euratechnologies, Lille 59000" type="java.lang.String" index="0"/>
+        <constructor-arg value="14" type="int" index="2">
+        </constructor-arg>
+    </bean>
+
+    <bean id="developerBean" class="com.spring.ioc.model.Developer">
+        <property name="name" value="Mickael"></property>
+        <property name="nbSkillYear" value="4"></property>
+    </bean>
+
+    <bean id="productManagerBean" class="com.spring.ioc.model.Developer">
+        <property name="name" value="Adam"></property>
+        <property name="nbSkillYear" value="45"></property>
+    </bean>
+
+    <bean id="companyBean" class="com.spring.ioc.model.Company">
+        <property name="name" value="Boris company"></property>
+        <property name="devJava" ref="developerBean"></property>
+        <property name="projectManager" ref="productManagerBean"></property>
+    </bean>
+</beans>
