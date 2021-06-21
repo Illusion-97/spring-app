@@ -15,14 +15,17 @@ public class SpringAppApplication {
         ApplicationContext ctxt =
                 new ClassPathXmlApplicationContext("spring-bean.xml");
 
+        System.out.println();
         System.out.println("House Ordered :");
         House house = (House) ctxt.getBean("houseBean1");
         System.out.println(house);
 
+        System.out.println();
         System.out.println("House Disordered :");
         House house2 = (House) ctxt.getBean("houseBean2");
         System.out.println(house2);
 
+        System.out.println();
         System.out.println("Boris Company :");
         Company company = (Company) ctxt.getBean("companyBean");
         System.out.println(company);
