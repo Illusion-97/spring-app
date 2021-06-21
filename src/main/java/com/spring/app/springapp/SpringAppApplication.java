@@ -4,6 +4,7 @@ import com.spring.ioc.model.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 @SpringBootApplication
@@ -43,6 +44,10 @@ public class SpringAppApplication {
         System.out.println();
         System.out.println("Calling Annother Customer :");
         System.out.println(ctxt.getBean("custom"));
+
+        System.out.println();
+        System.out.println("Calling A User :");
+        System.out.println(ctxt.getBean("userXMLBean"));
     }
 
 }

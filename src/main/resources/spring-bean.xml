@@ -20,4 +20,9 @@
         <property name="nbSkillYear" value="45"/>
     </bean>
 
+    <bean id="priceXMLBean" class="com.spring.ioc.model.Price"/>
+    <bean id="userXMLBean" class="com.spring.ioc.model.User">
+        <property name="firstName" value="#{'boris XML'.toUpperCase()}"/>
+        <property name="amount" value="#{priceXMLBean.getPrice()}"/>
+    </bean>
 </beans>
